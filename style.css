@@ -1,6 +1,6 @@
 
 :root {
-  
+  --default-border-radius: 0.35rem;
 }
 
 ::-webkit-scrollbar {
@@ -64,4 +64,49 @@ img {
   background-position: center;
   border-radius: inherit;
   user-select: none;
+}
+
+.application-body {
+  position: relative;
+
+  height: 100vh;
+  height: 100svh;
+  max-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+
+  overflow: auto;
+
+  background-color: purple;
+
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.main-wrapper {
+  background-color: yellow;
+  border-radius: var(--default-border-radius);
+}
+
+.sidebar-wrapper {
+  position: relative;
+
+  height: calc(100vh - 4rem);
+  height: calc(100svh - 4rem);
+  max-height: calc(100vh - 4rem);
+  width: 100%;
+
+  overflow: auto;
+
+  background-color: aqua;
+  border-radius: var(--default-border-radius);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-header {
+  border-bottom: thin solid blue;
 }
