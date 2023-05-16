@@ -1,6 +1,7 @@
 
 :root {
   --default-border-radius: 0.35rem;
+  --default-transition: 50ms;
 }
 
 ::-webkit-scrollbar {
@@ -79,15 +80,18 @@ img {
 
   background-color: purple;
 
-  display: grid;
-  grid-template-columns: 300px 1fr;
+  display: flex;
   padding: 2rem;
   gap: 2rem;
+
 }
 
 .main-wrapper {
   background-color: yellow;
   border-radius: var(--default-border-radius);
+
+  height: 100%;
+  width: calc(100vw - 4rem - 300px);
 }
 
 .sidebar-wrapper {
@@ -96,7 +100,7 @@ img {
   height: calc(100vh - 4rem);
   height: calc(100svh - 4rem);
   max-height: calc(100vh - 4rem);
-  width: 100%;
+  width: 300px;
 
   overflow: auto;
 
@@ -105,8 +109,58 @@ img {
 
   display: flex;
   flex-direction: column;
+
 }
 
 .sidebar-header {
   border-bottom: thin solid blue;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+.sidebar-header-id {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.sidebar-header-icon {
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+}
+
+.sidebar-link-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-link-container {
+  display: flex;
+  flex-direction: row;
+
+  gap: 1rem;
+  align-items: center;
+
+  transition: background-color 150ms linear;
+  padding: 1rem;
+
+  user-select: none;
+}
+
+.sidebar-link-container:hover {
+  background-color: red;
+}
+
+.sidebar-link-icon {
+  height: 24px;
+  width: 24px;
+  flex: 0 0 24px;
+}
+
+.sidebar-link-id {
+  font-size: 16px;
+  font-weight: 600;
 }
